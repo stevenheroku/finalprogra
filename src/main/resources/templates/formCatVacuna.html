@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en-US" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>CAT-VACUNAS</title>
+<link lang="en-US" rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+	integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"
+	crossorigin="anonymous">
+<link rel="shortcut icon" href="img/icono.png" type="image/x-icon">
+<link rel="stylesheet" href="css/formularios.css">
+</head>
+<body>
+	<div class="container mt-4">
+		<div class="col-sm-6">
+
+			<form th:action="@{/aguardar}" th:object=${cat_tipo_vacuna} method="POST">
+
+				<div class="card-header">
+					<h3>FORMULARIO CATALOGO VACUNAS</h3>
+				</div>
+				<div class="form-group row">
+					<label class="col-md-6" for="id">ID</label> 
+					<input th:field="*{ID_TIPO_VACUNA}"  class="form-control form-control-sm col-md-6" placeholder="id_vacuna" th:errorclass="'form-control alert-danger'"> 
+					<small class= "m-text text-danger offset-6"th:if="${#fields.hasErrors('ID_TIPO_VACUNA')}" th:errors="*{ID_TIPO_VACUNA}"></small>
+				</div>
+
+				<div class="form-group row">
+					<label class="col-md-6" for="id">ID_LABORATORIO</label> 
+					<input th:field="*{cat_laboratorios_id_laboratorio}" class="form-control form-control-sm col-md-6" placeholder="id_laborator" th:errorclass="'form-control alert-danger'"> 
+					<small class= "m-text text-danger offset-6"th:if="${#fields.hasErrors('cat_laboratorios_id_laboratorio')}" th:errors="*{cat_laboratorios_id_laboratorio}"></small>
+				</div>
+
+				<div class="form-group row">
+
+					<label class="col-md-6" for="id">ID_PAIS</label> 
+					<input th:field="*{cat_laboratorios_cat_pais_id_pais}"  class="form-control form-control-sm col-md-6" placeholder="id pais" th:errorclass="'form-control alert-danger'"> 
+					<small class= "m-text text-danger offset-6"th:if="${#fields.hasErrors('cat_laboratorios_cat_pais_id_pais')}" th:errors="*{cat_laboratorios_cat_pais_id_pais}"></small>
+				</div>
+				
+				<div class="form-group row">
+
+					<label class="col-md-6" for="id">ID_TIPO_VACUNA</label>
+					 <input th:field="*{idcat_tipo_vacuna}" class="form-control form-control-sm col-md-6" placeholder="id vacuna" th:errorclass="'form-control alert-danger'"> 
+					 <small class= "m-text text-danger offset-6"th:if="${#fields.hasErrors('idcat_tipo_vacuna')}" th:errors="*{idcat_tipo_vacuna}"></small>
+				</div>
+				
+				<div class="form-group row">
+					<label class="col-md-6" for="id">NOMBRE_VACUNA</label> 
+					<input th:field="*{NOMBRE_VACUNA}" class="form-control form-control-sm col-md-6" placeholder="nombre vacuna" th:errorclass="'form-control alert-danger'"> 
+					<small class= "m-text text-danger offset-6"th:if="${#fields.hasErrors('NOMBRE_VACUNA')}" th:errors="*{NOMBRE_VACUNA}"></small>
+				</div>
+				<div class="form-group row">
+					<label class="col-md-6" for="id">EFECTOS_ADVERSOS</label> 
+					<input th:field="*{EFECTOS_ADVERSOS}" class="form-control form-control-sm col-md-6" placeholder="efectos adversos" th:errorclass="'form-control alert-danger'"> 
+					<small class= "m-text text-danger offset-6"th:if="${#fields.hasErrors('EFECTOS_ADVERSOS')}" th:errors="*{EFECTOS_ADVERSOS}"></small>
+				</div>
+
+				<div class="form-group row">
+					<label class="col-md-6" for="id">MODO_ALMACEN</label> 
+					<input th:field="*{MODO_ALMACEN}" class="form-control form-control-sm col-md-6" placeholder="modo almacen" th:errorclass="'form-control alert-danger'"> 
+						<small class= "m-text text-danger offset-6"th:if="${#fields.hasErrors('MODO_ALMACEN')}" th:errors="*{MODO_ALMACEN}"></small>
+				</div>
+
+				<div class="form-group row">
+					<label class="col-md-6" for="id">NUMERO_DE_DOSIS</label> 
+					<input	th:field="*{numero_de_dosis}" class="form-control form-control-sm col-md-6" placeholder="numero de dosis" th:errorclass="'form-control alert-danger'"> 
+						<small class= "m-text text-danger offset-6"th:if="${#fields.hasErrors('numero_de_dosis')}" th:errors="*{numero_de_dosis}"></small>
+				</div>
+
+			
+
+				<div class="card-footer bg-dark">
+					<input type="submit" value="Guardar" class="btn btn-success">
+					<a th:href="@{/catvacuna}" class="btn btn-success">Regresar</a>
+				</div>
+			</form>
+		</div>
+
+	</div>
+
+	<div class="container"></div>
+	<!-- PIE DE PÁGINA -->
+
+	<footer th:fragment="footer"
+		class="bg-dark text-center text-white fixed-bottom">
+
+		<div class="container">
+			<p>@Copyrigth APP-WEB-JEFF 2020</p>
+		</div>
+
+
+
+	</footer>
+	<script src="https://code.jquery.com/jquery-3.5.1.js"
+		integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+		crossorigin="anonymous"></script>
+	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+	<script src="js/funciones.js"></script>
+</body>
+</html>

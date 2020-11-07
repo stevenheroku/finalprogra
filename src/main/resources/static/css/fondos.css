@@ -1,0 +1,7 @@
+body
+{
+	  background: url(../img/fondo.jpg) no-repeat center center fixed;
+	  -webkit-backgtound-size:cover;
+	  background-size:cover;
+	  background-attachment:fixed;
+}
